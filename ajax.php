@@ -8,7 +8,7 @@ $html = array();
 $html[] = 'This is response from AJAX';
 $html[] = '<br/>';
 $html[] = 'A JS alert should be trigerred';
-$html[] = '<script>alert("script in AJAX executed");</script>';
+$html[] = '<script>alert("script in AJAX executed...");</script>';
 
 $data['html'] = implode("\n", $html);
 $response['data'] = $data; 
