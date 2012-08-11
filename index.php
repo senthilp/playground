@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Playground</title>
+	<link type="text/css" href="css_test.php" rel="stylesheet"/>
 	<style type="text/css">
 		body {
 			width: 990px;
@@ -34,6 +35,10 @@
 </head>
 <body>	
 	<h1>The Playground</h1>
+<script>
+var templates = {};
+templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";var _ = this;b += "<div class=\"keylet\">";b += "\n" + i;b += "	<a href=\"";b += (_.v(_.f("profileUrl",c,p,0)));b += "\"><div class=\"user-image\" style=\"background-image: url(\\'";b += (_.v(_.f("userImg",c,p,0)));b += "\\')\"></div></a>";b += "\n" + i;b += "	<div class=\"user-message\">";b += "\n" + i;b += "		<div>";b += "\n" + i;b += "			<div class=\"name\"><strong><a href=\"";b += (_.v(_.f("profileUrl",c,p,0)));b += "\">";b += (_.v(_.f("userId",c,p,0)));b += "</strong></a></div>";b += "\n" + i;b += "			<div class=\"timestamp\">";b += (_.v(_.f("createdTime",c,p,0)));b += "</div>";b += "\n" + i;b += "		</div>";b += "\n" + i;b += "		<div class=\"message\">";b += (_.v(_.f("message",c,p,0)));b += "</div>";b += "\n" + i;b += "		<div class=\"rating\">";b += "\n" + i;b += <div class=\"up\"><span class=\"count m";b += (_.v(_.f("id",c,p,0)));b += "\">";b += (_.v(_.f("like",c,p,0)));b += "</span><a href=\"#m";b += (_.v(_.f("id",c,p,0)));b += "\"><div class=\"icon\"></div></a></div>";b += "\n" + i;b += "		<div class=\"down\"><span class=\"count m";b += (_.v(_.f("id",c,p,0)));b += "\">";b += (_.v(_.f("dislikes",c,p,0)));b += "</span><a href=\"#m";b += (_.v(_.f("id",c,p,0)));b += "\"><div class=\"icon\"></div></a></div>";b += "\n" + i;b += "		</div>";b += "\n" + i;b += "	</div>";b += "\n" + i;b += "	<div class=\"clear\"></div>";b += "\n" + i;b += "</div>";return b;;});
+</script>
 	<div class="playground">
 		<script type="text/javascript">document.write('<script type="text\/javascript" src="\/playground\/base.js"><\/script>');</script>
 		<script type="text/javascript">
