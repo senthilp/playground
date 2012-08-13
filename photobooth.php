@@ -1,5 +1,22 @@
 
 <!DOCTYPE html>
+<!--
+Copyright 2011 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Author: Eric Bidelman (ericbidelman@chromium.org)
+-->
 <html>
 <head>
 <meta charset="utf-8">
@@ -25,19 +42,18 @@ html, body {
   padding: 0;
 }
 body {
-  display: -webkit-flexbox;
-  -webkit-flex-item-align: center;
-  -webkit-flex-pack: center;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
   box-sizing: border-box;
 }
 article {
-  -webkit-flex-item-align: center;
   text-align: center;
 }
 #monitor {
   /*-webkit-transform: scaleX(-1);*/
-  height: 400px;
-  -webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent 80%, rgba(255,255,255,0.2));
+  height: 300px;
+  /*-webkit-box-reflect: below 20px -webkit-linear-gradient(top, transparent, transparent 80%, rgba(255,255,255,0.2));*/
 }
 #live {
   position: absolute;
@@ -62,7 +78,7 @@ article {
   margin-top: 5px;
 }
 #gallery img {
-	float: left;
+  float: left;
   position: absolute;
   z-index: -1;
   height: 250px;
@@ -114,11 +130,11 @@ h1 {
  <h1>Take a picture</h1>
  <section id="app" hidden>
   <div class="container"><span id="live">LIVE</span><video id="monitor" autoplay onclick="changeFilter(this)" title="Click me to see different filters"></video></div>
-  <p>Click to take a snap</p>
+  <p>Click the video to see different CSS filters</p>
  </section>
  <p><button onclick="init(this)">Camera</button></p>
  <div id="splash">
- <!--  <p id="errorMessage">&uarr;<br>Click to begin</p> -->
+  <p id="errorMessage"></p>
  </div>
  <div id="gallery"></div>
 </article>
@@ -184,7 +200,11 @@ function gotStream(stream) {
 }
 
 function noStream(e) {
-  document.getElementById('errorMessage').textContent = 'No camera available.';
+  var msg = 'No camera available.';
+  if (e.code == 1) {
+    msg = 'User denied access to use camera.';
+  }
+  document.getElementById('errorMessage').textContent = msg;
 }
 
 function capture() {
@@ -193,6 +213,7 @@ function capture() {
     intervalId = null;
     return;
   }
+
 
     ctx.drawImage(video, 0, 0);
     var img = document.createElement('img');
@@ -207,8 +228,9 @@ function capture() {
 
     //img.style.top = Math.floor(Math.random() * maxTop) + 'px';
     //img.style.left = Math.floor(Math.random() * maxLeft) + 'px';
-    img.style.top = '5%';
-    img.style.left = '5%';
+	img.style.top = '5%';
+	img.style.left = '5%';
+	
     gallery.appendChild(img);
 }
 
@@ -219,7 +241,7 @@ function init(el) {
   }
   el.onclick = capture;
   el.textContent = 'Snapshot';
-  navigator.getUserMedia('video', gotStream, noStream);
+  navigator.getUserMedia({video: true}, gotStream, noStream);
 }
 
 window.addEventListener('keydown', function(e) {
@@ -233,6 +255,11 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-22014378-1']);
 _gaq.push(['_trackPageview']);
 
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
 <!--[if IE]>
 <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
