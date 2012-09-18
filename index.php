@@ -105,7 +105,7 @@ templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";v
 		//loadScript("js_test.php");			
 		</script>		
 	</div>
-	<script src="js_test.php" async="true" defer="defer"></script>
+	<!-- <script src="js_test.php" async="true" defer="defer"></script>  -->
 	<div class="render">
 		<div>Render 1</div>
 		<div>Render 2</div>
@@ -115,6 +115,7 @@ templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";v
 		<a href="#" id="ajaxCheck">AJAX Check</a>
 		<div id="response"></div>
 	</div>
+	<iframe src="iframe.php"></iframe>
 	<script type="text/javascript">
 		var io = {
 			get: function(url, cb) {

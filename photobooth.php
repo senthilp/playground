@@ -81,7 +81,7 @@ article {
   float: left;
   position: absolute;
   z-index: -1;
-  height: 250px;
+  height: 130px;
 }
 .container {
   padding: 10px 25px 5px 25px;
