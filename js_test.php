@@ -4,13 +4,14 @@
 ?>
 
 function sleep(delay) {
-	var DELAY = delay || 0,// in milliseconds
+	var DELAY = (delay * 1000) || 0,// in milliseconds
 		now = new Date().getTime(),
 		later = now + DELAY;
 	while(now < later) {
 		now = new Date().getTime();
 	}
 }
+// JS Sleep
 sleep(0);
 
 function log() {

@@ -115,7 +115,7 @@ templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";v
 		<a href="#" id="ajaxCheck">AJAX Check</a>
 		<div id="response"></div>
 	</div>
-	<iframe src="iframe.php"></iframe>
+	<iframe src="http://lm-sjc-00711069/playground/iframe.php"></iframe>
 	<script type="text/javascript">
 		var io = {
 			get: function(url, cb) {
