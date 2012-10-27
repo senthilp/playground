@@ -31,6 +31,10 @@
 			width: 400px;
 			height: 50px;
 		}
+		.render div:hover {
+			background-color: yellow;
+			cursor: pointer;
+		}
 	</style>	
 </head>
 <body>	
@@ -42,6 +46,16 @@ templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";v
 	<div class="playground">
 		<script type="text/javascript">document.write('<script type="text\/javascript" src="\/playground\/base.js"><\/script>');</script>
 		<script type="text/javascript">
+
+		function sleep(seconds) {
+			var now = new Date().getTime(),
+				later = now + (seconds * 1000);
+
+			while(now < later) {
+				now = new Date().getTime();
+			}
+		};
+		
 		window.onload = function() {
 			alert("window onload");
 		};
@@ -152,6 +166,9 @@ templates.test = new Hogan.Template(function(c,p,i){i = i || "";var b = i + "";v
 				return false;
 			};
 		})(document);
+
+		// Put to sleep
+		sleep(0);
 	</script>	
 </body>
 </html>

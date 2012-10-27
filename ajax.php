@@ -1,4 +1,7 @@
 <?php
+
+sleep(0);
+
 header("Content-Type: application/json; charset=utf-8");
 
 $response = array();
