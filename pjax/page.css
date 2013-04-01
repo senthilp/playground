@@ -1,0 +1,61 @@
+body {
+	width: 990px;
+	margin: 0 auto;
+	font: 14px/24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header, footer {
+	font-size: 3em;
+	color: #AAA;
+	text-align: center;
+	border: 1px solid #DDD;
+	padding: 20px 0;
+}
+header {
+	margin: 10px 0 20px;
+}
+footer {
+	margin-top: 20px;
+}
+.container {
+	text-align:center;
+	position: relative;
+	background: #333; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #333 0%, #000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#333), color-stop(100%,#000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333', endColorstr='#000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	padding: 150px 0;
+}
+.container h1 {
+	letter-spacing: -3px;
+	color: #fff;
+	position: relative;
+	margin: 0 0 15px;
+	font-size: 75px;
+	line-height: 80px;	
+}
+.container a {
+	text-decoration: none;
+	color: #999113;
+}
+.container .button {
+	display: inline-block;
+	cursor: pointer;
+	background: #dfd52e;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	color: #000;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 0 34px;
+	line-height: 46px;
+	font-weight: bold;
+	-webkit-transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-o-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;	
+}
