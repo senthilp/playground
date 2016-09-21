@@ -12,5 +12,6 @@
 	$content[] = '<a href="http://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback2&userid=wirelesshut2010&&_trksid=p2047675.l2560&rt=nc&iid=281082876442&sspagename=VIP:feedback&ftab=FeedbackAsSeller" class="button">Go to Feedback</a>.';
 	
 	// Flushing the output
+	//header("Cache-Control: private");
 	echo getSkeleton($title, implode("\n", $content));
 ?>

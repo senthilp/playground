@@ -12,5 +12,6 @@
 	$content[] = '<a href="viewitem.php" class="button">Go to View Item</a>';
 	
 	// Flushing the output
+	//header("Cache-Control: private");
 	echo getSkeleton($title, implode("\n", $content));
 ?>

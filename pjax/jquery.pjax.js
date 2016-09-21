@@ -375,6 +375,10 @@ if (initialState && initialState.container) {
   pjax.state = initialState
 }
 
+if('state' in window.history) {
+	initialPop = false;
+}
+
 // popstate handler takes care of the back and forward buttons
 //
 // You probably shouldn't use pjax on pages with other pushState
