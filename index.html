@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="layout" content="main" />
+    <title>Prefetch Test</title>      
+    <meta name="author" content="Senthil Padmanabhan"/>
+    <meta name="description" content="Testing link prefetch use cases"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"/>
+    <meta name="apple-mobile-web-app-title" content="Senthil Blog" />
+    <link type="text/css" rel="stylesheet" href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/combo.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://ir.ebaystatic.com/cr/v/c1/skin/v2.6.0/css/grid-core.min.css"/>
+    <link rel="prefetch" href="http://www.ebay.com/sch/1080p-HD-Video-Recording-Camera-Drones/179697/bn_89958/i.html"/>
+    <link rel="prefetch" href="http://www.ebay.com/sch/amp/GoPro-Compatible-Camera-Drones/179697/bn_89957/i.html"/>
+    <link rel="prefetch" href="http://www.ebay.com/sch/1080p-HD-Video-Recording-Wi-Fi-Connection-Camera-Drones/179697/bn_9272914/i.html"/>
+    <style type="text/css">
+        body {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        header {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+        }
+        .items {
+            background-color: #fff;
+            padding: 40px 20px;
+        }
+        .card {
+            border: 1px solid #eee;
+            padding: 10px 0;
+            margin: 20px;
+        }
+        .card p {
+            text-align: center;
+        }
+        .card__img-wrapper {
+            height: 225px;
+            width: 225px;
+        }
+        .card img {
+            max-height: 225px;
+            max-width: 225px;
+        }        
+    </style>
+</head>
+<body>
+    <header class="grid">
+        <div class="grid__group grid__group--full">
+            <h1>Link Prefetch Test</h1>
+        </div>    
+    </header>
+    <div class="main">
+        <div class="grid items">
+            <div class="grid__group grid__group--wrap">
+                <div class="grid__cell grid__cell--one-half grid__cell--8of8-sm">
+                    <div class="card">
+                        <a href="http://www.ebay.com/sch/1080p-HD-Video-Recording-Camera-Drones/179697/bn_89958/i.html" class="js-prefetch">
+                            <div class="flex-center">
+                                <div class="card__img-wrapper flex-center">
+                                    <img src="http://thumbs.ebaystatic.com/images/g/irAAAOSwFNZW0vNp/s-l225.jpg"/>
+                                </div>
+                            </div>
+                            <p>1080p HD Video Recording</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--one-half grid__cell--8of8-sm">
+                    <div class="item">
+                        <div class="card">
+                            <a href="http://www.ebay.com/sch/amp/GoPro-Compatible-Camera-Drones/179697/bn_89957/i.html" class="js-prefetch">
+                                <div class="flex-center">
+                                    <div class="card__img-wrapper flex-center">
+                                        <img src="http://thumbs.ebaystatic.com/images/g/lzUAAOSwuAVW0vNp/s-l225.jpg"/>
+                                    </div>
+                                </div>
+                                <p>GoPro Compatible</p>
+                            </a>
+                        </div>                    
+                    </div>
+                </div>                
+            </div>
+            <div class="grid__group grid__group--wrap">
+                <div class="grid__cell grid__cell--one-half grid__cell--8of8-sm">
+                    <div class="card">
+                        <a href="http://www.ebay.com/sch/1080p-HD-Video-Recording-Wi-Fi-Connection-Camera-Drones/179697/bn_9272914/i.html" class="js-prefetch">
+                            <div class="flex-center">
+                                <div class="card__img-wrapper flex-center">
+                                    <img src="http://i.ebayimg.com/images/g/aiAAAOSwkl5XdhgC/s-l225.webp"/>
+                                </div>
+                            </div>
+                            <p>Wi-Fi Connection</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__cell grid__cell--one-half grid__cell--8of8-sm">
+                    <div class="item">
+                        <div class="card">
+                            <a href="http://www.ebay.com/sch/1080p-HD-Video-Recording-Remote-Control-Camera-Drones/179697/bn_9273292/i.html">
+                                <div class="flex-center">
+                                    <div class="card__img-wrapper flex-center">
+                                        <img src="http://i.ebayimg.com/images/g/898AAOSw9NdXsoqf/s-l225.webp"/>
+                                    </div>
+                                </div>
+                                <p>Remote Control</p>
+                            </a>
+                        </div>                    
+                    </div>
+                </div>                
+            </div>            
+        </div>
+    </div>
+    <script src="http://ir.ebaystatic.com/rs/c/inception-31e83b.js"></script>
+    <script src="http://ir.ebaystatic.com/rs/c/search-page-small-9f09a0.js" async></script>    
+    <script>
+        (function() {
+            if (!window.console || !window.performance) {
+                return;
+            }
+            var resourceStats = function() {
+                const entries = performance.getEntries && performance.getEntries();
+                if (!entries) {
+                    return;
+                }
+
+                console.log(`%c senthilp.com Resource Stats`, `color: red; font-weight: bold; font-size: 20px;`);
+                console.log(`%c External resource count: ${entries.length}`, `color: #666; font-weight: bold; font-size: 16px;`);
+                entries.forEach(({name, duration}) => {
+                    console.log(`%c ${name} (${duration}ms)`, `color: #666; font-size: 14px;`);
+                });
+            };
+            window.addEventListener('load', () => {
+                requestAnimationFrame(resourceStats);
+            }, false);
+        }());
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+# Numerous always-ignore extensions
+MANIFEST.MF
+Gemfile.lock
+/target
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+/src/*.css
+
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders and files to ignore
+public
+.hg
+.svn
+.CVS
+.idea
+.jekyll
+_site
+coverage
+
+#node modules
+node_modules
+
+#visual regression
+*.diff.png
+*.fail.png
+
+# Build files (Lasso, docs & CDN)
+build
+
+docs/src/.jekyll-metadata
+
+npm-debug.log.*
