@@ -138,10 +138,16 @@
     </script>
     <script type="text/javascript">
         window.addEventListener('load', () => {
-            const elem = document.createElement('link');
-            elem.rel = 'prefetch';
-            elem.href = 'https://cdn.ampproject.org/c/m.ebay.com/sch/amp/Camera-Drones/179697/bn_89951/i.html';
-            document.getElementsByTagName('head')[0].appendChild(elem);
+            const prefetchURLs = Array.prototype.map.call(document.querySelectorAll('.js-prefetch'), node => node.href),
+                headTag = document.querySelector('head');
+
+            // Iterate the URLs and add to headtag    
+            prefetchURLs.forEach(url => {
+                const elem = document.createElement('link');
+                elem.rel = 'prefetch';
+                elem.href = url;
+                headTag.appendChild(elem);            
+            });
         });
     </script>    
 </body>
